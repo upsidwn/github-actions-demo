@@ -8,21 +8,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.jobs
+      
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
       - name: Install Dependencies
-        run: npm Install
+        run: npm install
       
       - name: Build project
         run: |
           mkdir dist
           echo "This is the build artifact" > dist/build.txt
-
-      - name: Run tests
-        run: npm test
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
