@@ -24,8 +24,9 @@ on: [push]
         - name: Run tests
           run: npm test
 
-        - name: Upload build arrtifact
+        - name: Upload build artifact
           uses: actions/upload-artifact@v4
           with:
             name: build-assets
-            path: dist
+            path: dist.txt
+            
